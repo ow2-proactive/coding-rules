@@ -106,3 +106,8 @@ The fix is to create `.gitattributes` file in the project's root path with the f
 *.png binary
 *.jpg binary
 ```
+
+Run the following git commands to apply the `.gitattributes` rules in the git local working directory, otherwise the current working directory will still have the windows line ending character
+
+1. ``` git rm --cached -r . ```
+2. ``` git reset --hard ```

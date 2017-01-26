@@ -107,7 +107,9 @@ The fix is to create `.gitattributes` file in the project's root path with the f
 *.jpg binary
 ```
 
-Run the following git commands to apply the `.gitattributes` rules in the git local working directory, otherwise the current working directory will still have the windows line ending character
+Run the following git commands on the jenkins windows slave machine to apply the `.gitattributes` rules inside the git local working directory, otherwise the current working directory will still have the windows line ending character.
 
 1. ``` git rm --cached -r . ```
 2. ``` git reset --hard ```
+
+The jenkins workspace directory is kind of like C:\jenkins\workspace\${project_name}\jdk\JDK8\label\Windows

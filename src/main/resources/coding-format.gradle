@@ -32,6 +32,7 @@ spotless {
             include '**/*.md'
             include '**/*.sh'
             exclude 'gradle/ext'
+            exclude 'build/nodejs'
             exclude '**/node_modules/'
         }
         indentWithSpaces()

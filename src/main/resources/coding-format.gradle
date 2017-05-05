@@ -9,6 +9,7 @@ spotless {
             exclude '.gradle/**/*.java'
             exclude '**/generated/'
             exclude '**/node_modules/'
+	    exclude '**/bower_components/'
         }
 
         licenseHeaderFile   "$rootDir/gradle/ext/proactive.license.java"  // License header file
@@ -34,6 +35,7 @@ spotless {
             exclude 'gradle/ext'
             exclude 'build/nodejs'
             exclude '**/node_modules/'
+	    exclude '**/bower_components/'
         }
         indentWithSpaces()
         trimTrailingWhitespace()

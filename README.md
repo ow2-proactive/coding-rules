@@ -8,15 +8,30 @@ Configuration files used to enforce our coding guidelines / formatting
 ## Intellij User
 
 * Use File > Import settings and select settings.jar to import the settings in IntelliJ IDEA.
-* (Optional if you have already the "Eclipse code formatter" plugin installed) Install Eclipse Code Formatter plugin, Preference -> Plugins -> Browse repositories, search "Eclipse Code Formatter" to install it and restart your Intellij after.
-* Go to Preference -> Other Settings -> Eclipse Code Formatter
+* (Optional if you have already the "Eclipse code formatter" plugin installed) Install Eclipse Code Formatter plugin from the Plugins dialog screen:
+
+  * on MacOS: Preferences -> Plugins
+  * on GNU/Linux: File -> Settings -> Plugins
+  * on Microsoft Windows: File -> Settings
+  
+  Click on Browse repositories, search for "Eclipse Code Formatter" and click on Install.
+  To load this new plugin, you will need to restart IntelliJ.
+* Open up the Eclipse Code Formatter dialog screen:
+
+  * on MacOS: Preferences -> Eclipse Code Formatter
+  * on GNU/Linux: File -> Settings -> Eclipse Code Formatter
+  * on Microsoft Windows: File -> Settings -> Other Settings -> Eclipse Code Formatter
+  
 * Enable the plugin by ticking "Use the Eclipse code formatter"
-* Setting "Eclipse Java Formatter config file" by using the src/main/resource/ProactiveCodeFormatter.xml.
+* Setting "Eclipse Java Formatter config file" by using the `src/main/resource/ProactiveCodeFormatter.xml`
 * Make sure the ProActive Rules is selected as "Java formatter profile"
 * Tick "Optimize Imports"
-* Select "Import order from file", which uses the src/main/resources/proactive.importorder
+* Select "Import order from file", which uses `src/main/resources/proactive.importorder`
 * Click on Apply or OK
-* Make sure in Preference -> Editor -> Code Style, ProActive is selected as Scheme.
+* Make sure that the selected Code Style Scheme is "Proactive" by opening the Code Style dialog screen:
+
+  * on MacOS: Preferences -> Editor -> Code Style
+  * on GNU/Linux: File -> Settings -> Editor -> Code Style
 
 ## Eclipse User
 
@@ -46,11 +61,13 @@ buildscript {
     }
 }
 ```
+
 2.Apply the code format plugin in your project's build.gradle file with
 
 ```
 apply from: "$rootDir/gradle/ext/coding-format.gradle"
 ```
+
 3.Update your project's .gitignore by adding the line below to ignore the temporary folder
 
 ```
@@ -69,6 +86,7 @@ Some projects may have a build exception after having applied the changes above,
 An exception occurred applying plugin request [id: 'org.sonarqube', version: '2.2.1']
 > Cannot change dependencies of configuration ':classpath' after it has been resolved.
 ```
+
 This is because the sonarqube plugin is applied within the "plugins" block like this
 
 ```
@@ -84,6 +102,7 @@ dependencies {
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1"
     }
 ```
+
 then apply the plugin like this
 
 ```
@@ -109,7 +128,7 @@ The fix is to create `.gitattributes` file in the project's root path with the f
 
 Run the following git commands on the jenkins windows slave machine to apply the `.gitattributes` rules inside the git local working directory, otherwise the current working directory will still have the windows line ending character.
 
-1. ``` git rm --cached -r . ```
-2. ``` git reset --hard ```
+1. `git rm --cached -r .`
+2. `git reset --hard`
 
-The jenkins workspace directory is kind of like C:\jenkins\workspace\${project_name}\jdk\JDK8\label\Windows
+The jenkins workspace directory is kind of like `C:\jenkins\workspace\${project_name}\jdk\JDK8\label\Windows`

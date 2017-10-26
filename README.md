@@ -35,7 +35,7 @@ Configuration files used to enforce our coding guidelines / formatting
 
 ## Eclipse User
 
-Download Eclipse_Preferences.epf file (https://github.com/Mykhailenko/coding-rules/blob/master/Eclipse_Preferences.epf), and import it by doing in Eclipse: File > Import > General > Preferences, browse to file and Finish. This epf file contains already the ProactiveCodeFormatter.xml, no need to import the formatter again.
+Download Eclipse_Preferences.epf file (https://github.com/ow2-proactive/coding-rules/blob/master/Eclipse_Preferences.epf), and import it by doing in Eclipse: File > Import > General > Preferences, browse to file and Finish. This epf file contains already the ProactiveCodeFormatter.xml, no need to import the formatter again.
 
 
 ## Code format during the project build

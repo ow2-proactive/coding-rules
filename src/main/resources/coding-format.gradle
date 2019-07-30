@@ -36,6 +36,7 @@ spotless {
             exclude 'build/nodejs'
             exclude '**/node_modules/'
 	    exclude '**/bower_components/'
+	    exclude '**/build/reports/'
         }
         indentWithSpaces()
         trimTrailingWhitespace()

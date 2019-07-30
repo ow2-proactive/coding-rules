@@ -6,7 +6,7 @@ repositories {
 }
 
 group = 'org.ow2.proactive'
-version = '1.0.0'
+version = '1.0.1'
 
 uploadArchives {
     repositories {
